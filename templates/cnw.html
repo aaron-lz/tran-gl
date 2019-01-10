@@ -1,0 +1,41 @@
+{% extends "_base.html" %}
+{% block title %} 翻译 {% endblock %}
+
+{% block content %}
+          <div class="card my-4">
+            <h5 class="card-header">翻译</h5>
+            <div class="card-body">
+              <form action="/gettran" method="post">
+                <div class="form-group">
+                  Translation
+                  <hr>
+                </div>
+                  <div class="input-group-prepend">
+                        {{ form.hidden_tag() }}
+                        
+                        {{ form.isp_info(class="form-control") }}
+                        {{ form.sub(class="input-group-text",value='生成配置') }}
+                  </div>
+              </form>
+              <div class="form-group">
+                {% if data %}
+                  
+                
+                  <div class="card-body">
+                    <h5 class="card-title">{{ data['cn'] }}</h5>
+                    <p class="card-text">{{ data['en'] }}</p>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        <section>
+            <div id="container_buttons">
+
+
+                </div>
+            </div>
+        </section>
+{% endblock %}
+
+{% block page_bottom %}{% endblock %}
